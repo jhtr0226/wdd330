@@ -1,0 +1,64 @@
+@media screen and (min-width: 600px) {
+    h2 {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    h2 {
+        text-align: center;
+    }
+
+    nav {
+        max-width: 100%;
+        margin: 0 auto;
+        background: black;
+        text-align: center;
+        background-color: black;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+
+    .navigation {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+    }
+
+
+    .navigation {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navigation a {
+        display: block;
+        flex: 1 1 100%;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    #my-button {
+        display: none;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .herolabel p {
+
+        padding: 5px;
+        font-size: small;
+    }
+
+    .herolabel {
+        left: 15px;
+        padding: 5px;
+    }
+}

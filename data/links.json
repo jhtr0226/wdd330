@@ -1,0 +1,95 @@
+{
+    "lessons": [
+        {
+            "lesson": "01",
+            "links": [
+                {
+                    "url": "lessons/lesson01/calculator.html",
+                    "title": "Calculator"
+                },
+                {
+                    "url": "lessons/lesson01/user.html",
+                    "title": "Modules"
+                }
+            ]
+        },
+        {
+            "lesson": "02",
+            "links": [
+                {
+                    "url": "https://codepen.io/jhtr0226/pen/VwNOWgx",
+                    "title": "Responsive Hamburger Menu"
+                },
+                {
+                    "url": "lessons/lesson02/prophets.html",
+                    "title": "Prophets"
+                },
+                {
+                    "url": "lessons/lesson01/next-child-element.png",
+                    "title": "DOM"
+                }
+            ]
+        },
+        {
+            "lesson": "03",
+            "links": [
+                {
+                    "url": "lessons/lesson03/pokemons.html",
+                    "title": "Ajax & Fetch API"
+                },
+                {
+                    "url": "https://codepen.io/jhtr0226/pen/LYoNqqG",
+                    "title": "Form Validation"
+                },
+                {
+                    "url": "lessons/lesson03/form.html",
+                    "title": "FormData"
+                }
+            ]
+        },
+        {
+            "lesson": "04",
+            "links": [
+                {
+                    "url": "lessons/lesson04/animation.html",
+                    "title": "Animation"
+                }
+            ]
+        },
+        {
+            "lesson": "05",
+            "links": [
+                {
+                    "url": ,
+                    "title":
+                }
+            ]
+        },
+        {
+            "lesson": "06",
+            "links": [
+                {
+                    "url": ,
+                    "title":
+                },
+                {
+                    "url": ,
+                    "title":
+                }
+            ]
+        },
+        {
+            "lesson": "07",
+            "links": [
+                {
+                    "url": ,
+                    "title":
+                },
+                {
+                    "url": ,
+                    "title":
+                }
+            ]
+        }
+    ]
+}

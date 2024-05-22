@@ -1,0 +1,210 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Salsa&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Playfair+Display:ital,wght@1,500&family=Salsa&display=swap');
+
+:root {
+    --paragraphs-font: "Salsa", sans-serif;
+    --heading-font: "Playfair Display", sans-serif;
+    --test-font: "Kalam", "sans-serif";
+    --secondary-color: #427AA1;
+    --primary-color: #4B2E61;
+
+}
+
+
+/*Images*/
+#myPic {
+    margin-top: 25px;
+    width: 110px;
+    height: auto;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: auto;
+}
+
+/*//////////////////////////////////////////////////////////*/
+
+
+
+main {
+    max-width: 750px;
+    margin: 0 auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+header {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    background: linear-gradient(to bottom, var(--primary-color), black);
+    font-family: var(--test-font);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: white;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+#my-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+
+}
+
+#my-button::before {
+    content: "☰";
+    color: white;
+}
+
+#my-button.open::before {
+    content: "🔺";
+    color: white;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    max-width: 100%;
+    background-color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    justify-content: center;
+    text-align: center;
+    display: none;
+}
+
+.navigation p,
+.navigation a {
+    font-size: 1.2em;
+    color: white;
+    margin: 5px;
+    font-family: var(--heading-font);
+    padding: 2px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+nav {
+    max-width: 100%;
+    margin: 0 auto;
+    background: black;
+    text-align: center;
+    background-color: black;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px black;
+
+}
+
+.navigation.open {
+    display: block;
+    width: 100%;
+}
+
+
+.active::before {
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px black;
+    content: "> ";
+
+}
+
+.active::after {
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px black;
+    content: " <";
+
+}
+
+.active {
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px black;
+}
+
+
+footer {
+    font-size: 1.2em;
+    max-width: 100%;
+    margin-top: 25px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to top, var(--primary-color), black);
+    border-radius: 5px;
+}
+
+
+
+footer p {
+    font-family: var(--paragraphs-font);
+    color: white;
+    text-align: center;
+
+}
+
+.card {
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #000;
+    margin: 0 auto;
+}
+
+.card h3 {
+    background-color: var(--primary-color);
+    font-size: 1.5em;
+    font-family: var(--heading-font);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 15px;
+
+}
+
+.card p {
+    font-size: 1.2em;
+    font-family: var(--paragraphs-font);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.7em;
+    font-family: var(--paragraphs-font);
+    margin-top: 55px;
+    text-align: center;
+    margin-bottom: -15px;
+
+}
+
+/*list*/
+.my-list {
+    list-style: none;
+    font-family: var(--paragraphs-font);
+    font-size: 1.2em;
+}
+
+.my-list li {
+    margin-bottom: 10px;
+
+}

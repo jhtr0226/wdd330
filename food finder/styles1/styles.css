@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Domine:wght@500&display=swap');
+
+:root {
+    --primary-color: #ffd275;
+    --secondary-color: #e8ae68;
+    --third-color: #8c363f;
+    --fourth-color: #5a2328;
+    --fifth-color: #db5a42;
+
+    --h-font: "Caveat";
+    --p-font: "Domine";
+}

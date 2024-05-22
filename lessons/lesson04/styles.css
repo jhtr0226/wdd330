@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: myanima 3s infinite alternate;
+}
+
+@keyframes myanima {
+    0% {
+        transform: translateY(0);
+        background-color: #3498db;
+    }
+
+    50% {
+        transform: translateX(200px) translateY(-100px);
+        background-color: #2ecc71;
+        color: #fff;
+    }
+
+    100% {
+        transform: translateX(-100px) translateY(-100px);
+        background-color: #9b59b6;
+    }
+}
+
+/*
+
+https: //codepen.io/blazzard-jason/pen/abPXpLE
+
+*/
