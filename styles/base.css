@@ -6,8 +6,9 @@
     --paragraphs-font: "Salsa", sans-serif;
     --heading-font: "Playfair Display", sans-serif;
     --test-font: "Kalam", "sans-serif";
-    --secondary-color: #427AA1;
-    --primary-color: #4B2E61;
+    --secondary-color: #4B2E61;
+    --primary-color: #2e29bb;
+    /*#2e29bb*/
 
 }
 
@@ -67,7 +68,7 @@ h1 {
 }
 
 #my-button.open::before {
-    content: "🔺";
+    content: "X";
     color: white;
 }
 
@@ -169,7 +170,7 @@ footer p {
 }
 
 .card h3 {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     font-size: 1.5em;
     font-family: var(--heading-font);
     border-top-right-radius: 5px;
