@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="images/favicon.webp">
 
     <meta property=" og:title" content="Johann Tellez - WDD 230 - Web Frontend Development">
@@ -21,10 +22,71 @@
 </head>
 
 <body>
-    <header id="header">
-        </head>
+    <header id="header"></header>
 
-        <footer id="footer"></footer>
+    <main>
+        <section class="section-one general">
+            <div id="search-recipe" class="search-recipe">
+                <form id="search-form">
+                    <input type="text" placeholder="Dish Name" name="search">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+
+        <div id="recipes" class="recipes"></div>
+        <section id="recipe-details" class="recipe-details hidden">
+            <div class="details-content">
+                <span id="close-details" class="close">&times;</span>
+                <div id="recipe-content"></div>
+            </div>
+        </section>
+
+
+
+
+        <section class="section-two general">
+            <div id="with-ingredients" class="with-ingredients">
+                <h3>Find with Ingredients:</h3>
+                <form id="with-ingredients-form">
+                    <input type="text" placeholder="Ingredient" name="ingredient">
+                    <button type="button" onclick="addIngredient('with')">Add</button>
+                </form>
+                <ul id="with-ingredients-list"></ul>
+                <button id="search-with-ingredients">Search Recipes with Ingredients</button>
+            </div>
+
+            <div id="without-ingredients" class="without-ingredients">
+                <h3>Find Without Ingredients:</h3>
+                <form id="without-ingredients-form">
+                    <input type="text" placeholder="Ingredient" name="ingredient">
+                    <button type="button" onclick="addIngredient('without')">Add</button>
+                </form>
+                <ul id="without-ingredients-list"></ul>
+                <button id="search-without-ingredients">Search Recipes without Ingredients</button>
+            </div>
+        </section>
+
+
+        <div id="category"></div>
+        <div id="add-recipe"></div>
+        <div id="history"></div>
+        <div id="favs"></div>
+
+
+    </main>
+
+
+
+
+
+
+    <footer id="footer"></footer>
+    <script src="js/listst.js"></script>
+    <script src="js/normal-search.js"></script>
 </body>
 
 </html>

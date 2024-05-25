@@ -10,3 +10,179 @@
     --h-font: "Caveat";
     --p-font: "Domine";
 }
+
+body {
+    margin: 0 auto;
+}
+
+
+
+main {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+
+.general {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0 auto;
+}
+
+
+/*Searches*/
+/*Search-recipe*/
+.search-recipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    max-width: 90%;
+}
+
+.search-recipe input[type=text] {
+    border-radius: 25px;
+    border: solid 1px #000;
+    text-align: center;
+}
+
+.search-recipe button {
+    background-color: #0074D9;
+    color: #f2f2f2;
+    padding: 5px 10px;
+    margin-right: 16px;
+    font-size: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-recipe i {
+    font-size: 18px;
+}
+
+
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.recipe-card h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/**/
+.recipe-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.recipe-details .details-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/*Section 2*/
+.section-two {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.with-ingredients input,
+.without-ingredients input {
+    width: 50%;
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.with-ingredients button,
+.without-ingredients button {
+    padding: 5px;
+    background-color: #0074D9;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.with-ingredients ul,
+.without-ingredients ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.with-ingredients ul li,
+.without-ingredients ul li {
+    width: 30%;
+    background-color: #eee;
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.with-ingredients ul li button,
+.without-ingredients ul li button {
+    margin-left: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.with-ingredients ul li button:hover,
+.without-ingredients ul li button:hover {
+    background-color: #cc0000;
+}
