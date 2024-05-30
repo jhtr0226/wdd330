@@ -1,18 +1,3 @@
-import { initTemplate } from "./base.mjs";
-import { dark } from "./dark-mode.mjs";
-dark();
-initTemplate();
-document.addEventListener('DOMContentLoaded', () => {
-    const withoutIngredientsForm = document.getElementById('without-ingredients-form');
-
-    loadIngredients('without');
-
-    withoutIngredientsForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        addIngredient('without');
-    });
-});
-
 function addIngredient(type) {
     const input = document.querySelector(`#${type}-ingredients-form input[name="ingredient"]`);
     const ingredient = input.value.trim();
@@ -64,3 +49,5 @@ function deleteIngredient(type, ingredient, listItem) {
     ingredients = ingredients.filter(item => item !== ingredient);
     localStorage.setItem(`${type}-ingredients`, JSON.stringify(ingredients));
 }
+
+export { addIngredient, loadIngredients };
