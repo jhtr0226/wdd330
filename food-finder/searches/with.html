@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Finder</title>
+
+    <meta name="description" content="Food recipe Finder.">
+    <meta name="author" content="Johann Helaman Tellez Rodriguez">
+
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/larger.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/favicon.webp">
+
+    <meta property=" og:title" content="Johann Tellez - WDD 330 - Web Frontend Development 2">
+    <meta property="og:type" content="website.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://jhtr0226.github.io/wdd330/food-finder/index.html">
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <div class="getting-dark">
+        <label class="switch" id="mode">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <main>
+        <section class="section-two general">
+            <div id="with-ingredients" class="with-ingredients">
+                <h3>Find with Ingredients:</h3>
+                <form id="with-ingredients-form">
+                    <input type="text" placeholder="Ingredient" name="ingredient">
+                    <button type="button" onclick="addIngredient('with')">Add</button>
+                </form>
+                <ul id="with-ingredients-list"></ul>
+                <button id="search-with-ingredients">Search Recipes with Ingredients</button>
+            </div>
+        </section>
+
+
+        <div id="recipes" class="recipes"></div>
+        <section id="recipe-details" class="recipe-details hidden">
+            <div class="details-content">
+                <span id="close-details" class="close">&times;</span>
+                <div id="recipe-content"></div>
+            </div>
+        </section>
+
+
+
+
+        <div id="category"></div>
+        <div id="add-recipe"></div>
+        <div id="history"></div>
+        <div id="favs"></div>
+
+
+    </main>
+
+
+
+
+
+
+    <footer id="footer"></footer>
+    <script src="../js/with-list.js" type="module"></script>
+</body>
+
+</html>

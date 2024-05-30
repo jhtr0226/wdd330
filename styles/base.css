@@ -139,28 +139,6 @@ nav {
     text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px black;
 }
 
-
-footer {
-    font-size: 1.2em;
-    max-width: 100%;
-    margin-top: 25px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(to top, var(--primary-color), black);
-    border-radius: 5px;
-}
-
-
-
-footer p {
-    font-family: var(--paragraphs-font);
-    color: white;
-    text-align: center;
-
-}
-
 .card {
     border-radius: 5px;
     width: 100%;

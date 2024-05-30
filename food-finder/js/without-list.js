@@ -1,14 +1,11 @@
+import { initTemplate } from "./base.mjs";
+import { dark } from "./dark-mode.mjs";
+dark();
+initTemplate();
 document.addEventListener('DOMContentLoaded', () => {
-    const withIngredientsForm = document.getElementById('with-ingredients-form');
     const withoutIngredientsForm = document.getElementById('without-ingredients-form');
 
-    loadIngredients('with');
     loadIngredients('without');
-
-    withIngredientsForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        addIngredient('with');
-    });
 
     withoutIngredientsForm.addEventListener('submit', (event) => {
         event.preventDefault();

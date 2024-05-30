@@ -61,7 +61,11 @@
             "links": [
                 {
                     "url": "",
-                    "title": ""
+                    "title": "Geolocation API"
+                },
+                {
+                    "url": "",
+                    "title": "Canvas API"
                 }
             ]
         },
@@ -69,22 +73,14 @@
             "lesson": "06",
             "links": [
                 {
-                    "url": "",
-                    "title": ""
-                },
-                {
-                    "url": "",
-                    "title": ""
+                    "url": "#",
+                    "title": "N/A"
                 }
             ]
         },
         {
             "lesson": "07",
             "links": [
-                {
-                    "url": "",
-                    "title": ""
-                },
                 {
                     "url": "",
                     "title": ""

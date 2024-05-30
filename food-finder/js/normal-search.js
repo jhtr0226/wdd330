@@ -1,3 +1,11 @@
+import { initTemplate } from "./base.mjs";
+import { dark } from "./dark-mode.mjs";
+
+initTemplate();
+dark();
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const searchForm = document.getElementById('search-form');
     const recipesContainer = document.getElementById('recipes');
