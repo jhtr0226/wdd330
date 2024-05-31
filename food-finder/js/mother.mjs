@@ -60,7 +60,7 @@ function displayRecipes(recipes) {
         recipeCard.appendChild(recipeImage);
 
         recipeCard.addEventListener('click', () => {
-            fetchRecipeDetails(recipe.id);
+            window.location.href = `../details-page/index.html?id=${recipe.id}`;
         });
 
         recipesContainer.appendChild(recipeCard);
@@ -72,13 +72,19 @@ async function fetchRecipeDetails(id) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        displayRecipeDetails(data);
+        return data;
     } catch (error) {
         console.error('Error fetching recipe details:', error);
+        throw error;
     }
 }
 
 function displayRecipeDetails(recipe) {
+    const recipeContent = document.getElementById('recipe-content');
+    if (!recipeContent) {
+        console.error('Recipe content container not found');
+        return;
+    }
     recipeContent.innerHTML = `
         <h2>${recipe.title}</h2>
         <img src="${recipe.image}" alt="${recipe.title}">
@@ -89,7 +95,6 @@ function displayRecipeDetails(recipe) {
         <h3>Instructions:</h3>
         <p>${recipe.instructions}</p>
     `;
-    recipeDetails.classList.remove('hidden');
 }
 
 export {

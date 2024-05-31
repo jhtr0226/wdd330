@@ -31,21 +31,13 @@
     </div>
 
     <main>
-        <section class="section-two general">
-            <div id="with-ingredients" class="with-ingredients">
-                <h3>Find with Ingredients:</h3>
-                <form id="with-ingredients-form">
-                    <input type="text" placeholder="Ingredient" name="ingredient">
-                    <button type="button" onclick="addIngredient('with')">Add</button>
-                </form>
-                <ul id="with-ingredients-list"></ul>
-                <button id="search-with-ingredients">Search Recipes with Ingredients</button>
+
+        <section id="recipe-details" class="recipe-details">
+            <div class="details-content">
+                <div id="recipe-content"></div>
+                <a href="../index.html" class="back-button">&larr; Back</a>
             </div>
         </section>
-
-        <div id="recipes" class="recipes"></div>
-
-
 
 
         <div id="category"></div>
@@ -62,7 +54,9 @@
 
 
     <footer id="footer"></footer>
-    <script src="../js/with.js" type="module"></script>
+
+    <script src="../js/details.js" type="module">
+    </script>
 </body>
 
 </html>

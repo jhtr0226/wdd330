@@ -53,11 +53,8 @@ footer {
 
 
 main {
-    max-width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    margin: 25px auto;
-
+    max-width: 80%;
+    margin: 35px auto;
 }
 
 
@@ -66,6 +63,7 @@ main {
     grid-template-columns: auto;
     margin: 0 auto;
 }
+
 
 
 /*Searches*/
@@ -110,6 +108,7 @@ main {
 
 .recipe-card {
     border: 1px solid #ddd;
+    background: var(--fourth-color);
     border-radius: 10px;
     padding: 10px;
     width: 200px;
@@ -124,42 +123,71 @@ main {
 .recipe-card h4 {
     font-size: 1.2em;
     margin: 10px 0;
+    font-family: var(--h-font);
 }
 
 /**/
-.recipe-details {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.recipe-details .details-content {
-    background-color: #fff;
+.recipes-detail {
+    max-width: 100%;
     padding: 20px;
+}
+
+.details-content {
+    background-color: var(--fifth-color);
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 80%;
-    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 88%;
+    text-align: center;
+    padding: 20px;
 }
 
-.hidden {
-    display: none;
+.details-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 35px;
+
 }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
+.details-content h2,
+.details-content h3 {
+    margin: 0 auto;
+    color: #000;
+    font-family: var(--h-font);
+    font-size: 1.8rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.details-content ul {
+    list-style-type: none;
+    padding-left: 20px;
+    color: #000;
+    font-family: var(--p-font);
+}
+
+.details-content p {
+    line-height: 1.6;
+    color: #000;
+    font-family: var(--p-font);
+}
+
+.details-content li {
+    text-align: center;
+    color: #000;
+    font-family: var(--p-font);
+
+}
+
+.back-button {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    text-decoration: underline;
 }
 
 /*Section 2*/
@@ -227,7 +255,6 @@ main {
 
 /**/
 .dark-mode {
-    background-color: #000;
     color: #fff;
     border-color: #eee;
 }
