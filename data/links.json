@@ -60,12 +60,16 @@
             "lesson": "05",
             "links": [
                 {
-                    "url": "",
+                    "url": "lessons/lesson05/geolocation.html",
                     "title": "Geolocation API"
                 },
                 {
-                    "url": "",
-                    "title": "Canvas API"
+                    "url": "lessons/lesson05/basic-usage.html",
+                    "title": "Basic Usage"
+                },
+                {
+                    "url": "lessons/lesson05/shapes.html",
+                    "title": "Shapes"
                 }
             ]
         },
@@ -82,8 +86,8 @@
             "lesson": "07",
             "links": [
                 {
-                    "url": "",
-                    "title": ""
+                    "url": "food-finder/index.html",
+                    "title": "Final Proyect"
                 }
             ]
         }
