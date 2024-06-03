@@ -352,3 +352,99 @@ input:checked+.slider:before {
 .index-card {
     border-radius: 25px;
 }
+
+/*new recipe*/
+
+.div-form {
+    border-radius: 25px;
+    border: 1px solid #000;
+    background-color: #eeeeeebd;
+}
+
+fieldset {
+    border: none;
+}
+
+.dark-mode .div-form {
+    background-color: #000000bb;
+    border: 1px solid #ffffff;
+}
+
+.div-form h2 {
+    font-family: var(--h-font);
+    font-size: 2em;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+}
+
+#add-recipe-form label {
+    font-family: var(--h-font);
+    font-size: 1.8em;
+    display: block;
+    text-align: center;
+}
+
+#add-recipe-form input[type="text"],
+#add-recipe-form input[type="url"],
+#add-recipe-form textarea {
+    display: block;
+    margin: 0 auto;
+    border: solid 1px black;
+    border-radius: 6px;
+    padding: .75rem;
+    width: 90%;
+    max-width: 400px;
+    appearance: none;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: var(--p-font);
+}
+
+.dark-mode #add-recipe-form input[type="text"],
+.dark-mode #add-recipe-form input[type="url"],
+.dark-mode #add-recipe-form textarea {
+    background-color: black;
+    border: solid 1px white;
+    color: white;
+
+}
+
+#add-recipe-form input:required,
+.dark-mode #add-recipe-form input:required,
+#add-recipe-form textarea:required,
+.dark-mode #add-recipe-form textarea:required {
+    border-left: solid 6px red;
+}
+
+#add-recipe-form input:required:valid,
+.dark-mode #add-recipe-form input:required:valid,
+#add-recipe-form textarea:valid,
+.dark-mode #add-recipe-form textarea:valid {
+    border-left: solid 6px green;
+}
+
+#add-recipe-form button {
+    display: block;
+    margin: 1rem auto;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 70%;
+    max-width: 400px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#add-recipe-form button:hover {
+    background-color: #007BFF;
+}
+
+.dark-mode #add-recipe-form button {
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+}
+
+.dark-mode #add-recipe-form button:hover {
+    background: linear-gradient(to top, var(--fourth-color), var(--fifth-color));
+}

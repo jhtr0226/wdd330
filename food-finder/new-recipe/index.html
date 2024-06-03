@@ -22,22 +22,26 @@
     </div>
 
     <main>
-        <h2>Add a New Recipe</h2>
-        <form id="add-recipe-form">
-            <label for="dish-name">Dish Name:</label>
-            <input type="text" id="dish-name" name="dishName" required>
+        <div class="div-form">
+            <h2>Add a New Recipe</h2>
+            <form id="add-recipe-form">
+                <fieldset>
+                    <label for="dish-name">Dish Name:</label>
+                    <input type="text" id="dish-name" name="dishName" required>
 
-            <label for="image-url">Image URL:</label>
-            <input type="url" id="image-url" name="imageUrl" required>
+                    <label for="image-url">Image URL:</label>
+                    <input type="url" id="image-url" name="imageUrl" required>
 
-            <label for="ingredients">Ingredients (comma-separated):</label>
-            <input type="text" id="ingredients" name="ingredients" required>
+                    <label for="ingredients">Ingredients (comma-separated):</label>
+                    <input type="text" id="ingredients" name="ingredients" required>
 
-            <label for="instructions">Instructions:</label>
-            <textarea id="instructions" name="instructions" required></textarea>
-
-            <button type="submit">Add Recipe</button>
-        </form>
+                    <label for="instructions">Instructions:</label>
+                    <textarea id="instructions" name="instructions" rows="4" cols="50"
+                        placeholder="Add the cooked rice, etc" required></textarea>
+                </fieldset>
+                <button type="submit">Add Recipe</button>
+            </form>
+        </div>
     </main>
     <footer id="footer"></footer>
     <script src="../js/add-recipe.js" type="module"></script>
