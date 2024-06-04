@@ -1,3 +1,5 @@
+
+
 const recipeDetails = document.getElementById('recipe-details');
 const recipeContent = document.getElementById('recipe-content');
 const closeDetails = document.getElementById('close-details');
@@ -106,45 +108,6 @@ async function fetchRecipeDetails(id) {
 }
 
 
-function addToHistory(recipe) {
-    let history = JSON.parse(localStorage.getItem('recipe-history')) || [];
-    history = history.filter(item => item.id !== recipe.id);
-    history.unshift(recipe);
-    if (history.length > 10) history.pop();
-    localStorage.setItem('recipe-history', JSON.stringify(history));
-}
-
-function displayHistory() {
-    const historyContainer = document.getElementById('history');
-    if (!historyContainer) {
-        console.error('History container not found');
-        return;
-    }
-    const history = JSON.parse(localStorage.getItem('recipe-history')) || [];
-    historyContainer.innerHTML = '';
-
-    history.forEach(recipe => {
-        const historyCard = document.createElement('div');
-        historyCard.classList.add('history-card');
-
-        const historyTitle = document.createElement('h4');
-        historyTitle.textContent = recipe.title;
-        historyCard.appendChild(historyTitle);
-
-        const historyImage = document.createElement('img');
-        historyImage.src = recipe.image;
-        historyImage.alt = recipe.title;
-        historyCard.appendChild(historyImage);
-
-        historyCard.addEventListener('click', () => {
-            window.location.href = `../details-page/index.html?id=${recipe.id}`;
-        });
-
-        historyContainer.appendChild(historyCard);
-    });
-}
-
-
 function getLocalRecipeById(id) {
     const localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
     return localRecipes.find(recipe => recipe.id === id);
@@ -175,6 +138,7 @@ function displayRecipeDetails(recipe) {
     `;
     recipeDetails.classList.remove('hidden');
 }
+
 
 export {
     getIngredients,
