@@ -107,17 +107,27 @@ main {
 }
 
 .recipe-card {
-    border: 1px solid #ddd;
-    background: var(--fourth-color);
+    border: 1px solid #000;
+    background: #eeeeeebd;
     border-radius: 10px;
     padding: 10px;
     width: 200px;
     text-align: center;
 }
 
+.dark-mode .recipe-card {
+    background-color: #3a3333bb;
+    border: 1px solid #ffffff;
+}
+
 .recipe-card img {
     max-width: 100%;
     border-radius: 10px;
+    border: 1px solid black;
+}
+
+.dark-mode .recipe-card img {
+    border: 1px solid white;
 }
 
 .recipe-card h4 {
@@ -130,22 +140,32 @@ main {
 .recipes-detail {
     max-width: 100%;
     padding: 20px;
+    margin: 0 auto;
 }
 
 .details-content {
-    background-color: var(--fifth-color);
+    background-color: #eeeeeebd;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 88%;
+    width: 100%;
     text-align: center;
-    padding: 20px;
+    border: 1px solid black;
+}
+
+.dark-mode .details-content {
+    background-color: #3a3333bb;
+    border-radius: 10px;
+    border: 1px solid white;
 }
 
 .details-content img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 35px;
+    border: 1px solid black;
+}
 
+.dark-mode .details-content img {
+    border: 1px solid white;
 }
 
 .details-content h2,
@@ -153,28 +173,44 @@ main {
     margin: 0 auto;
     color: #000;
     font-family: var(--h-font);
-    font-size: 1.8rem;
+    font-size: 2.8em;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
+.dark-mode .details-content h2,
+.dark-mode .details-content h3 {
+    color: white;
+}
+
 .details-content ul {
     list-style-type: none;
-    padding-left: 20px;
+    margin-left: -40px;
     color: #000;
     font-family: var(--p-font);
+}
+
+.dark-mode .details-content p,
+.dark-mode .details-content ul,
+.dark-mode .details-content li {
+    color: white;
 }
 
 .details-content p {
     line-height: 1.6;
     color: #000;
     font-family: var(--p-font);
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2em;
 }
 
 .details-content li {
     text-align: center;
     color: #000;
     font-family: var(--p-font);
+    font-size: 1.2em;
+    margin: 0 auto;
 
 }
 
@@ -432,7 +468,7 @@ fieldset {
     width: 70%;
     max-width: 400px;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #add-recipe-form button:hover {

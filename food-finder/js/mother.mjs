@@ -10,18 +10,26 @@ function closing() {
     });
 }
 
-
 function getIngredients(type) {
     const ingredientsList = JSON.parse(localStorage.getItem(`${type}-ingredients`)) || [];
     return ingredientsList;
 }
 
-async function fetchRecipes(query) {
-    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=10&apiKey=${apiKey}`;
+async function fetchRecipes(searchQuery) {
     try {
-        const response = await fetch(url);
-        const data = await response.json();
-        displayRecipes(data.results);
+        const [response1, response2] = await Promise.all([
+            fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=${apiKey}`),
+            fetch('../data/new-recipes.json')
+        ]);
+
+        const data1 = await response1.json();
+        const data2 = await response2.json();
+
+        let localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
+        localRecipes = localRecipes.filter(recipe => recipe.title.toLowerCase().includes(searchQuery.toLowerCase()));
+        const recipes = [...data1.results, ...data2, ...localRecipes];
+
+        displayRecipes(recipes);
     } catch (error) {
         console.error('Error fetching recipes:', error);
     }
@@ -33,7 +41,20 @@ async function fetchRecipesByIngredients(ingredients, type) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        displayRecipes(data.results);
+
+        let localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
+
+        localRecipes = localRecipes.filter(recipe => {
+            if (type === 'include') {
+                return ingredients.every(ing => recipe.ingredients.map(i => i.toLowerCase()).includes(ing.toLowerCase()));
+            } else {
+                return !ingredients.some(ing => recipe.ingredients.map(i => i.toLowerCase()).includes(ing.toLowerCase()));
+            }
+        });
+
+        const recipes = [...data.results, ...localRecipes];
+
+        displayRecipes(recipes);
     } catch (error) {
         console.error('Error fetching recipes:', error);
     }
@@ -68,15 +89,65 @@ function displayRecipes(recipes) {
 }
 
 async function fetchRecipeDetails(id) {
-    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching recipe details:', error);
-        throw error;
+    if (id.startsWith('local_')) {
+        const localRecipe = getLocalRecipeById(id);
+        return localRecipe;
+    } else {
+        const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error fetching recipe details:', error);
+            throw error;
+        }
     }
+}
+
+
+function addToHistory(recipe) {
+    let history = JSON.parse(localStorage.getItem('recipe-history')) || [];
+    history = history.filter(item => item.id !== recipe.id);
+    history.unshift(recipe);
+    if (history.length > 10) history.pop();
+    localStorage.setItem('recipe-history', JSON.stringify(history));
+}
+
+function displayHistory() {
+    const historyContainer = document.getElementById('history');
+    if (!historyContainer) {
+        console.error('History container not found');
+        return;
+    }
+    const history = JSON.parse(localStorage.getItem('recipe-history')) || [];
+    historyContainer.innerHTML = '';
+
+    history.forEach(recipe => {
+        const historyCard = document.createElement('div');
+        historyCard.classList.add('history-card');
+
+        const historyTitle = document.createElement('h4');
+        historyTitle.textContent = recipe.title;
+        historyCard.appendChild(historyTitle);
+
+        const historyImage = document.createElement('img');
+        historyImage.src = recipe.image;
+        historyImage.alt = recipe.title;
+        historyCard.appendChild(historyImage);
+
+        historyCard.addEventListener('click', () => {
+            window.location.href = `../details-page/index.html?id=${recipe.id}`;
+        });
+
+        historyContainer.appendChild(historyCard);
+    });
+}
+
+
+function getLocalRecipeById(id) {
+    const localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
+    return localRecipes.find(recipe => recipe.id === id);
 }
 
 function displayRecipeDetails(recipe) {
@@ -85,16 +156,24 @@ function displayRecipeDetails(recipe) {
         console.error('Recipe content container not found');
         return;
     }
+
+    const ingredientsHtml = recipe.ingredients ?
+        recipe.ingredients.map(ing => `<li>${ing}</li>`).join('') :
+        recipe.extendedIngredients.map(ing => `<li>${ing.original}</li>`).join('');
+
+    const instructionsHtml = recipe.instructions || "No instructions available.";
+
     recipeContent.innerHTML = `
         <h2>${recipe.title}</h2>
         <img src="${recipe.image}" alt="${recipe.title}">
         <h3>Ingredients:</h3>
         <ul>
-            ${recipe.extendedIngredients.map(ing => `<li>${ing.original}</li>`).join('')}
+            ${ingredientsHtml}
         </ul>
         <h3>Instructions:</h3>
-        <p>${recipe.instructions}</p>
+        <p>${instructionsHtml}</p>
     `;
+    recipeDetails.classList.remove('hidden');
 }
 
 export {

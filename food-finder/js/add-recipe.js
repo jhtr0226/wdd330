@@ -4,7 +4,6 @@ initTemplate();
 dark();
 
 
-
 document.getElementById('add-recipe-form').addEventListener('submit', handleFormSubmission);
 
 async function handleFormSubmission(event) {
@@ -23,10 +22,15 @@ async function handleFormSubmission(event) {
         instructions: instructions
     };
 
-    let localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
-    localRecipes.push(newRecipe);
-    localStorage.setItem('local-recipes', JSON.stringify(localRecipes));
+    try {
+        let localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
+        localRecipes.push(newRecipe);
+        localStorage.setItem('local-recipes', JSON.stringify(localRecipes));
 
-    alert('Recipe added successfully!');
-    event.target.reset();
+        alert('Recipe added successfully!');
+        event.target.reset();
+    } catch (error) {
+        console.error('Error adding recipe:', error);
+        alert('Failed to add recipe.');
+    }
 }
