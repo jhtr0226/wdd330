@@ -11,4 +11,21 @@
         margin: 0 auto;
     }
 
+    .page-fav {
+        width: 40%;
+        margin: 0 auto;
+        margin: 15px auto;
+    }
+
+    .section-one,
+    .section-two {
+        width: 55%;
+    }
+
+    .div-form {
+        margin: 0 auto;
+        width: 50%;
+    }
+
+
 }

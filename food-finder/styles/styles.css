@@ -133,7 +133,14 @@ button {
     font-family: var(--p-font);
 }
 
-.page-fav {
+.block {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.page-fav,
+.favorite-button {
     margin: 15px;
     border-radius: 25px;
     border: 1px solid black;
@@ -141,7 +148,8 @@ button {
     font-size: 1.2em;
 }
 
-.dark-mode .page-fav {
+.dark-mode .page-fav,
+.dark-mode .favorite-button {
     border: 1px solid white;
     color: white;
     background-color: #000;
@@ -149,6 +157,7 @@ button {
 
 .dark-mode .page-fav:hover {
     background: linear-gradient(to top, var(--secondary-color), var(--third-color));
+
 }
 
 .dark-mode .page-fav::after,
@@ -211,6 +220,12 @@ button {
     padding: 10px;
     width: 200px;
     text-align: center;
+    transition: transform .5s;
+    margin: 10px auto;
+}
+
+.recipe-card:hover {
+    transform: scale(1.1);
 }
 
 .dark-mode .recipe-card {
@@ -314,14 +329,18 @@ button {
 
 .back-button {
     text-align: center;
-    margin-bottom: 20px;
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
+    margin: 25px auto;
+
+    font-size: 1.2rem;
 }
 
 .back-button:hover {
+    color: white;
     text-decoration: underline;
+    text-shadow: 0 0 5px white, 0 0 5px black, 0 0 5px white;
 }
 
 /*Section 2*/
