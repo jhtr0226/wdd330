@@ -1,4 +1,10 @@
 
+import {
+    addToFavorites,
+    removeFromFavorites,
+    isFavorite,
+    displayFavorites
+} from './favorites.js';
 
 const recipeDetails = document.getElementById('recipe-details');
 const recipeContent = document.getElementById('recipe-content');
@@ -28,7 +34,9 @@ async function fetchRecipes(searchQuery) {
         const data2 = await response2.json();
 
         let localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
+
         localRecipes = localRecipes.filter(recipe => recipe.title.toLowerCase().includes(searchQuery.toLowerCase()));
+
         const recipes = [...data1.results, ...data2, ...localRecipes];
 
         displayRecipes(recipes);
@@ -45,7 +53,6 @@ async function fetchRecipesByIngredients(ingredients, type) {
         const data = await response.json();
 
         let localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
-
         localRecipes = localRecipes.filter(recipe => {
             if (type === 'include') {
                 return ingredients.every(ing => recipe.ingredients.map(i => i.toLowerCase()).includes(ing.toLowerCase()));
@@ -107,7 +114,6 @@ async function fetchRecipeDetails(id) {
     }
 }
 
-
 function getLocalRecipeById(id) {
     const localRecipes = JSON.parse(localStorage.getItem('local-recipes')) || [];
     return localRecipes.find(recipe => recipe.id === id);
@@ -126,6 +132,10 @@ function displayRecipeDetails(recipe) {
 
     const instructionsHtml = recipe.instructions || "No instructions available.";
 
+    const favoriteButtonHtml = isFavorite(recipe.id)
+        ? `<button id="remove-favorite" class="favorite-button">Remove from Favorites</button>`
+        : `<button id="add-favorite" class="favorite-button">Add to Favorites</button>`;
+
     recipeContent.innerHTML = `
         <h2>${recipe.title}</h2>
         <img src="${recipe.image}" alt="${recipe.title}">
@@ -135,10 +145,30 @@ function displayRecipeDetails(recipe) {
         </ul>
         <h3>Instructions:</h3>
         <p>${instructionsHtml}</p>
+        ${favoriteButtonHtml}
     `;
+
+    if (isFavorite(recipe.id)) {
+        document.getElementById('remove-favorite').addEventListener('click', () => {
+            removeFromFavorites(recipe.id);
+            displayRecipeDetails(recipe);
+        });
+    } else {
+        document.getElementById('add-favorite').addEventListener('click', () => {
+            addToFavorites(recipe);
+            displayRecipeDetails(recipe);
+        });
+    }
+
     recipeDetails.classList.remove('hidden');
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('view-favorites-button')) {
+        document.getElementById('view-favorites-button').addEventListener('click', displayFavorites);
+    }
+    displayFavorites();
+});
 
 export {
     getIngredients,
@@ -147,5 +177,6 @@ export {
     displayRecipes,
     fetchRecipeDetails,
     displayRecipeDetails,
-    closing
+    closing,
+    displayFavorites
 };

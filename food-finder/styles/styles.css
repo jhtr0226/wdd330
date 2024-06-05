@@ -43,6 +43,29 @@ header.dark-mode {
     border-radius: 25px;
 }
 
+.logo-section-footer {
+    margin-top: 20px;
+}
+
+.hHeader {
+    font-family: var(--h-font);
+    font-size: 3em;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.pHeader {
+    font-family: var(--p-font);
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+h3 {
+    font-family: var(--h-font);
+    font-size: 2em;
+    margin-top: 10px;
+}
+
 footer {
     padding: 20px;
     color: white;
@@ -50,13 +73,55 @@ footer {
     text-align: center;
 }
 
+.index-card {
+    border-radius: 25px;
+    border: 1px solid #000;
+    background-color: #eeeeeedc;
+    padding: 50px 50px;
+    text-align: center;
+    font-family: var(--p-font);
+    font-size: 1.2rem;
+    transition: transform .5s;
+}
 
+.dark-mode .index-card {
+    background-color: #000000bb;
+    border: 1px solid #ffffff;
+}
+
+.dark-mode .index-card:hover {
+    transform: scale(1.1);
+}
+
+.index-card button {
+    border: none;
+    background-color: #eeeeeedc;
+    font-size: 1.2rem;
+    font-family: var(--p-font);
+}
+
+.dark-mode .index-card button {
+    background-color: #000000bb;
+    color: white;
+}
+
+.index-card a {
+    color: black;
+    text-decoration: none;
+}
+
+.dark-mode .index-card a {
+    color: white;
+}
+
+footer p {
+    font-family: var(--p-font);
+}
 
 main {
     max-width: 80%;
     margin: 35px auto;
 }
-
 
 .general {
     display: grid;
@@ -64,23 +129,56 @@ main {
     margin: 0 auto;
 }
 
+button {
+    font-family: var(--p-font);
+}
+
+.page-fav {
+    margin: 15px;
+    border-radius: 25px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    font-size: 1.2em;
+}
+
+.dark-mode .page-fav {
+    border: 1px solid white;
+    color: white;
+    background-color: #000;
+}
+
+.dark-mode .page-fav:hover {
+    background: linear-gradient(to top, var(--secondary-color), var(--third-color));
+}
+
+.dark-mode .page-fav::after,
+.dark-mode .page-fav::before {
+    content: "⭐";
+}
+
 
 
 /*Searches*/
 /*Search-recipe*/
 .search-recipe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     text-align: center;
-    margin: 10px auto;
+    margin: 0 auto;
     max-width: 90%;
+    margin-top: 0px;
 }
 
 .search-recipe input[type=text] {
     border-radius: 25px;
     border: solid 1px #000;
     text-align: center;
+    padding: 5px 5px;
+}
+
+.search-recipe button {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 .search-recipe button {
@@ -227,10 +325,21 @@ main {
 }
 
 /*Section 2*/
-.section-two {
+.section-two,
+.section-one {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
+    background-color: #eeeeeebd;
+    border-radius: 25px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.dark-mode .section-two,
+.dark-mode .section-one {
+    border: 1px solid white;
+    background-color: #000000bb;
 }
 
 .with-ingredients input,
@@ -238,8 +347,13 @@ main {
     width: 50%;
     flex: 1;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
+}
+
+.dark-mode .with-ingredients input,
+.dark-mode .without-ingredients input {
+    border: 1px solid white;
 }
 
 .with-ingredients button,
@@ -247,10 +361,17 @@ main {
     padding: 5px;
     background-color: #0074D9;
     color: #f2f2f2;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
+
+.dark-mode .with-ingredients button,
+.dark-mode .without-ingredients button {
+    border: 1px solid rgb(255, 255, 255);
+}
+
 
 .with-ingredients ul,
 .without-ingredients ul {
@@ -261,7 +382,8 @@ main {
 
 .with-ingredients ul li,
 .without-ingredients ul li {
-    width: 30%;
+    max-width: 55%;
+    width: auto;
     background-color: #eee;
     padding: 5px;
     margin: 0 auto;
@@ -269,6 +391,15 @@ main {
     display: flex;
     justify-content: space-between;
     text-align: center;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.dark-mode .with-ingredients ul li,
+.dark-mode .without-ingredients ul li {
+    border: 1px solid white;
+
+    background: linear-gradient(to bottom, var(--fifth-color), var(--fourth-color));
 }
 
 .with-ingredients ul li button,
@@ -368,25 +499,6 @@ input:checked+.slider:before {
     gap: 10px;
     display: grid;
     grid-template-columns: auto;
-}
-
-.onedotone {
-    background-color: var(--fifth-color);
-    padding: 50px 50px;
-}
-
-.onedottwo {
-    background-color: var(--fourth-color);
-    padding: 50px 50px;
-}
-
-.onedotthree {
-    background-color: var(--third-color);
-    padding: 50px 50px;
-}
-
-.index-card {
-    border-radius: 25px;
 }
 
 /*new recipe*/
