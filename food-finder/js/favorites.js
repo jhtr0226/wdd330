@@ -1,5 +1,8 @@
 const apiKey = 'e38eac8751c04ae4a4442698cb4e87e7';
 
+//backup
+//const apiKey = '554dc7e2e9504377a4eecad18254cc7b';
+
 function addToFavorites(recipe) {
     let favorites = JSON.parse(localStorage.getItem('favorite-recipes')) || [];
     favorites = favorites.filter(item => item.id !== recipe.id);
