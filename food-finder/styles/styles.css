@@ -270,7 +270,7 @@ button {
 }
 
 .dark-mode .details-content,
-.extra-data {
+.dark-mode .extra-data {
     background-color: #3a3333bb;
     border-radius: 10px;
     border: 1px solid white;
@@ -294,7 +294,7 @@ button {
 }
 
 .dark-mode .details-content img,
-.extra-data img {
+.dark-mode .extra-data img {
     border: 1px solid white;
 }
 
