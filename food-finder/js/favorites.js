@@ -1,9 +1,8 @@
-
 const apiKey = 'e38eac8751c04ae4a4442698cb4e87e7';
 
 function addToFavorites(recipe) {
     let favorites = JSON.parse(localStorage.getItem('favorite-recipes')) || [];
-    favorites = favorites.filter(item => item.id !== recipe.id); // Remove if already in favorites
+    favorites = favorites.filter(item => item.id !== recipe.id);
     favorites.push(recipe);
     localStorage.setItem('favorite-recipes', JSON.stringify(favorites));
 }
@@ -20,7 +19,7 @@ function isFavorite(recipeId) {
 }
 
 function displayFavorites() {
-    const favoritesContainer = document.getElementById('favorites');
+    const favoritesContainer = document.getElementById('favorites-list');
     if (!favoritesContainer) {
         console.error('Favorites container not found');
         return;

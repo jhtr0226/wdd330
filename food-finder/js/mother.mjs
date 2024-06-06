@@ -1,4 +1,3 @@
-
 import {
     addToFavorites,
     removeFromFavorites,
@@ -10,6 +9,9 @@ const recipeDetails = document.getElementById('recipe-details');
 const recipeContent = document.getElementById('recipe-content');
 const closeDetails = document.getElementById('close-details');
 const apiKey = 'e38eac8751c04ae4a4442698cb4e87e7';
+
+const favoritesModal = document.getElementById('favorites-modal');
+const viewFavoritesButton = document.getElementById('view-favorites-button');
 
 function closing() {
     closeDetails.addEventListener('click', () => {
@@ -163,9 +165,25 @@ function displayRecipeDetails(recipe) {
     recipeDetails.classList.remove('hidden');
 }
 
+// Modal functions
+function showFavoritesModal() {
+    displayFavorites();
+    favoritesModal.classList.remove('hidden');
+    favoritesModal.style.display = 'block';
+}
+
+function closeFavoritesModal() {
+    favoritesModal.classList.add('hidden');
+    favoritesModal.style.display = 'none';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('view-favorites-button')) {
-        document.getElementById('view-favorites-button').addEventListener('click', displayFavorites);
+    if (viewFavoritesButton) {
+        viewFavoritesButton.addEventListener('click', showFavoritesModal);
+    }
+    const closeFavorites = document.getElementById('close-favorites');
+    if (closeFavorites) {
+        closeFavorites.addEventListener('click', closeFavoritesModal);
     }
     displayFavorites();
 });
