@@ -259,7 +259,9 @@ button {
     margin: 0 auto;
 }
 
-.details-content {
+.details-content,
+.extra-data {
+    margin: 20px auto;
     background-color: #eeeeeebd;
     border-radius: 10px;
     width: 100%;
@@ -267,20 +269,32 @@ button {
     border: 1px solid black;
 }
 
-.dark-mode .details-content {
+.dark-mode .details-content,
+.extra-data {
     background-color: #3a3333bb;
     border-radius: 10px;
     border: 1px solid white;
 }
 
-.details-content img {
+.details-content img,
+.extra-data img {
     max-width: 80%;
     height: auto;
     border-radius: 35px;
     border: 1px solid black;
 }
 
-.dark-mode .details-content img {
+.extra-data img {
+    transition: transform .5s;
+    margin-bottom: 25px;
+}
+
+.extra-data img:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode .details-content img,
+.extra-data img {
     border: 1px solid white;
 }
 
@@ -303,6 +317,10 @@ button {
     list-style-type: none;
     margin-left: -40px;
     color: #000;
+    font-family: var(--p-font);
+}
+
+.extra-data p {
     font-family: var(--p-font);
 }
 

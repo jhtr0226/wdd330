@@ -76,6 +76,36 @@ async function fetchRecipesByIngredients(ingredients, type) {
     }
 }
 
+export async function fetchNutritionInfo(recipeId) {
+    try {
+        const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=${apiKey}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching nutrition info:', error);
+        return null;
+    }
+}
+
+export async function fetchSimilarRecipes(recipeId) {
+    try {
+        const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/similar?apiKey=${apiKey}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching similar recipes:', error);
+        return [];
+    }
+}
+
+
+
 function displayRecipes(recipes) {
     const recipesContainer = document.getElementById('recipes');
     if (!recipesContainer) {
