@@ -4,16 +4,15 @@ import {
     isFavorite,
     displayFavorites
 } from './favorites.js';
+require('dotenv').config();
+
 
 const recipeDetails = document.getElementById('recipe-details');
 const recipeContent = document.getElementById('recipe-content');
 const closeDetails = document.getElementById('close-details');
 
 
-const apiKey = 'e38eac8751c04ae4a4442698cb4e87e7';
-
-//backup
-//const apiKey = '554dc7e2e9504377a4eecad18254cc7b';
+const apiKey = process.env.API_KEY_NAME;
 
 const favoritesModal = document.getElementById('favorites-modal');
 const viewFavoritesButton = document.getElementById('view-favorites-button');
