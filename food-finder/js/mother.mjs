@@ -4,7 +4,6 @@ import {
     isFavorite,
     displayFavorites
 } from './favorites.js';
-require('dotenv').config();
 
 
 const recipeDetails = document.getElementById('recipe-details');
